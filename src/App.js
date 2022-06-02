@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter, Route, Routes} from "react-router-dom"
+import LoginPage from './sharedFolder/loginPage/LoginPage'
+import BuiltContract from './sharedFolder/contractBuilt/BuiltContract'
+import Navbar from './sharedFolder/navbar/Navbar';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <BrowserRouter>
+    <Navbar/>
+    <div className='navbar-item-container'>
+    <Routes>
+    <Route path='/' element={<BuiltContract/>}/>
+    <Route path='/login' element={<LoginPage/>} />
+    </Routes>
     </div>
+    </BrowserRouter>
   );
 }
 

@@ -1,0 +1,52 @@
+.navbar{
+    background-color: #e8f9f2;
+    height: 60px;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+}
+.logo{
+    width: 150px;
+    height: 40px;
+    margin-left: 5px;
+    padding-top: 8px;
+}
+@media screen and (min-width:768px) {
+    .logo{
+        width: 200px;
+    }
+}
+.list-menu{
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.list-item{
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 20px;
+    margin-right: 20px;
+    text-decoration: none !important;
+}
+.active-option{
+    text-decoration: underline;
+    color: black;
+}
+
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    align-self: center;
+}
+.logout-btn{
+    font-weight: 500;
+    margin-left: 10px;
+    margin-right: 10px;
+    cursor: pointer;
+}
