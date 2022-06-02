@@ -3,48 +3,23 @@
 }
 .doc-container{
     background-color: #009688;
-    width: 300px;
+    /* width: 300px; */
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 20px;
     padding-bottom: 20px;
 }
-@media screen and (min-width:414px) {
-    .doc-container{
-        width: 350px;
-    }
-    
-}
-@media screen and (min-width:768px) {
-    .doc-container{
-        width: 700px;
-    }
-    
-}
-@media screen and (min-width:820px) {
-    .doc-container{
-        width: 750px;
-    }
-    
-}
-@media screen and (min-width:1024px) {
-    .doc-container{
-        width: 900px;
-    }
-    
-}
+
 .form-control{
-    width: 300px;
+    width: 100%;
     height: 30px;
     border-radius: 5px;
     outline: none;
+    border: 0px;
+   
 }
-@media screen and (min-width:768px) {
-    .form-control{
-        width: 500px;
-    }
-}
+
 h4{
     color: aliceblue;
     font-size: 18px;

@@ -8,3 +8,11 @@
   margin-top: 30px;
   align-items: center;
 }
+.item-link-container{
+  width: 80%;
+}
+@media screen and (max-width:768px) {
+  .item-link-container{
+    width: 95%;
+  }
+}
