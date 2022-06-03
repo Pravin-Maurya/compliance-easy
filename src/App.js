@@ -11,13 +11,13 @@ function App() {
     <BrowserRouter>
     <Navbar/>
     <div className='navbar-item-container'>
-      <div className='item-link-container'>
+      {/* <div className='item-link-container'> */}
     <Routes>
     <Route path='/' element={<BuiltContract/>}/>
     <Route path='/login' element={<LoginPage/>} />
     </Routes>
     </div>
-    </div>
+    {/* </div> */}
     </BrowserRouter>
   );
 }

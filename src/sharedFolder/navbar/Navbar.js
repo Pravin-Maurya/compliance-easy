@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import {GiHamburgerMenu} from 'react-icons/gi'
+import Popup from 'reactjs-popup'
 import logo from '../../Asset/logo.png'
 
 import './NavbarStyle.css'
@@ -38,10 +40,37 @@ function Navbar() {
     window.open("http://localhost:5000/auth/logout", "_self");
   }
 
-  return (
-    <div className='navbar'>
-      <NavLink to={'/'}><img src= {logo} alt='logo' className='logo'/></NavLink>
-        <ul className='list-menu'>
+  const MobileMenu=()=>{
+    return(
+      <Popup
+          trigger={
+            <button type="button" className="hamburger-btn">
+              <GiHamburgerMenu size={24} className="hamburger-menu" />
+            </button>
+          }
+          position="bottom"
+        >
+          {close => (
+            <div className="modal-container">
+              <NavLink to="/" className="list-item">
+                <p className="items">Built a Contract</p>
+              </NavLink>
+              {user ? (
+          <p onClick={handleLogout} className='items'>LogOut</p>
+
+          ):
+            <NavLink to={'/login'} className="list-item"><p className='items'>Sign In</p></NavLink>
+
+            }
+            </div>
+          )}
+        </Popup>
+    )
+  }
+
+  const DesktopView=()=>{
+    return(
+      <ul className='list-menu-desktop'>
             <li className='list-item'>
             <NavLink to={'/'} activeClassName='active-option'>Build a Contract</NavLink>
             </li>
@@ -66,6 +95,21 @@ function Navbar() {
             }
             
         </ul>
+    )
+  }
+
+  return (
+    <div className='navbar'>
+      <NavLink to={'/'}><img src= {logo} alt='logo' className='logo'/></NavLink>
+        <DesktopView/>
+        <div className='mobile-view'>
+        {user ? (<img
+              src={user.photos[0].value}
+              alt={user.displayName}
+              className="avatar-mobile"
+            />): null}
+        <MobileMenu/>
+        </div>
     </div>
   )
 }
