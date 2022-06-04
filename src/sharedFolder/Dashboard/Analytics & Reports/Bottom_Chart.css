@@ -1,0 +1,20 @@
+#chart {
+  max-width: 550px;
+}
+.actions {
+  margin-top: -10px;
+}
+button {
+  color: #fff;
+  background: #6cbcff;
+  border: 0;
+  padding: 10px 20px;
+  margin: 5px;
+  font-weight: bold;
+  font-size: 13px;
+  box-shadow: 1px 1px 2px 1px #ccc;
+}
+.pie-chart-details-card{
+  display: flex;
+  justify-content: space-between;
+}

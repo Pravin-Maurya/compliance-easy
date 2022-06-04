@@ -35,7 +35,7 @@ function BuiltContract() {
         <div id="data-input">
           <div>
             <h4>Paste your Google Spreadsheet URL...</h4>
-            <p>(<a href="https://docs.google.com/spreadsheets/d/1HFGm_cSH_XeZtxfREusftu-4S1LYZeAVSVjWMmsRHtY/copy" target="_blank" rel="noreferrer">make a copy</a>)</p>
+            <p className='text-decoration'>(<a href="https://docs.google.com/spreadsheets/d/1HFGm_cSH_XeZtxfREusftu-4S1LYZeAVSVjWMmsRHtY/copy" target="_blank" rel="noreferrer">make a copy</a>)</p>
             <div className="input-container">
               <div className="data-link-input">
                 <form onSubmit={validateURL} className='form-container'>
@@ -43,12 +43,12 @@ function BuiltContract() {
                 </form>
               </div>
               <h4>... or choose a file from your computer</h4>
-              <p>(<a href="https://docs.google.com/spreadsheets/d/1HFGm_cSH_XeZtxfREusftu-4S1LYZeAVSVjWMmsRHtY/export?format=xlsx&gid=0">download sample</a>)</p>
+              <p className='text-decoration'>(<a href="https://docs.google.com/spreadsheets/d/1HFGm_cSH_XeZtxfREusftu-4S1LYZeAVSVjWMmsRHtY/export?format=xlsx&gid=0">download sample</a>)</p>
               <div clasName="data-upload-input">
                 <label className="custom-file">
                   <input type="file" className="custom-file-input" onChange={onChangeFile}/>
                   {/* <span class="custom-file-control">Choose file...</span> */}
-                  <p>{msg}</p>
+                  <p className='text-decoration'>{msg}</p>
                 </label>
               </div>
             </div>
