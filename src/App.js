@@ -3,21 +3,25 @@ import { BrowserRouter, Route, Routes} from "react-router-dom"
 import LoginPage from './sharedFolder/loginPage/LoginPage'
 import BuiltContract from './sharedFolder/contractBuilt/BuiltContract'
 import Navbar from './sharedFolder/navbar/Navbar';
-
+import Analytics from './sharedFolder/contractBuilt/Dashboard/Analytics & Reports/analytics';
 import './App.css';
 
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
+      <Navbar />
+     
     <div className='navbar-item-container'>
       {/* <div className='item-link-container'> */}
     <Routes>
     <Route path='/' element={<BuiltContract/>}/>
     <Route path='/login' element={<LoginPage/>} />
+    <Route path='/analytics' element={<Analytics/>} />
+  
     </Routes>
     </div>
-    {/* </div> */}
+      {/* </div> */}
+     
     </BrowserRouter>
   );
 }
