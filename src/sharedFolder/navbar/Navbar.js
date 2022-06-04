@@ -75,7 +75,7 @@ function Navbar() {
             <NavLink to={'/'} activeClassName='active-option'>Build a Contract</NavLink>
             </li>
             <li className='list-item'>
-            
+            <NavLink to={'/dashboard'}>Dashboard</NavLink>
             </li>
             {user ? (<>
               <li className="listItem">

@@ -1,0 +1,130 @@
+.menu-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 14rem;
+    background-color: #FBFBFB;
+    position: fixed;
+    left: 0px;
+    margin-top: 0px
+}
+.logo-container{
+    background-image: ;
+}
+.logo-compliance{
+    width: 13rem;
+}
+.menu{
+    font-family: 'Roboto';
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #717579;
+    margin-left: 1rem;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+.menu-item-container{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    justify-content: center;
+    padding-left: 1.2rem;
+
+}
+.menu-item{
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    color: #717579;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.menu-icons{
+    height: 1.8rem;
+    width: 1.8rem;
+    margin-right: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #717579;
+}
+.setting-btn{
+    background-color: #2251F8;
+    outline: none;
+    border: 0px;
+    border-radius: 50%;
+    margin-left: 8px;
+    color: #FBFBFB;
+}
+.green-card{
+    position: relative;
+    color: white;
+    margin-left: 1rem;
+}
+.green-img{
+    height: 150px;
+    width: 10rem;
+}
+.green-card-content{
+position: absolute;
+  top: 40%;
+  left: 40%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+   
+}
+.grid-icons{
+    align-self: flex-end;
+}
+.green-card-text{
+    font-size: 0.9rem;
+    text-align: left;
+
+}
+.learn-btn{
+    color: #EEEEEE;
+    border: none;
+    outline: 0px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 12px;
+    color: #717579;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.arrow-icon{
+    color: #717579;
+    font-size: 15px;
+}
+.privacy-container{
+    margin-left: 1rem;
+}
+.privacy-heading{
+    font-size: 1rem;
+    font-weight: 600;
+    color: #171B1E;
+    line-height: 24px;
+}
+.copyright-text{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #717579;
+}
+.text-by{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    color: #717579;
+}
