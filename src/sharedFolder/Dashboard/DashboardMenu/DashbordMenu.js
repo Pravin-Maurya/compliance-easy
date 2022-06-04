@@ -37,7 +37,7 @@ const DashbordMenu = () => {
 
             </li>
             <li className='menu-item click-menu'>
-                <a href='/dashboard/analytics'>
+                <a href='/dashboard/'>
                 <BsFillBarChartFill className='menu-icons'/>
                 Analytics {'&'} Reports
                 </a>
