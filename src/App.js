@@ -11,7 +11,8 @@ import Analytics from './sharedFolder/Dashboard/Analytics & Reports/analytics';
 function App() {
   return (
     <BrowserRouter>
-    <Navbar/>
+      <Navbar />
+     
     <div className='navbar-item-container'>
       {/* // <div className='item-link-container'>  */}
     <Routes>
@@ -21,7 +22,8 @@ function App() {
     {/* <Route path='/dashboard/analytics' element={<Analytics/>}/> */}
     </Routes>
     </div>
-    {/* </div> */}
+      {/* </div> */}
+     
     </BrowserRouter>
   );
 }
