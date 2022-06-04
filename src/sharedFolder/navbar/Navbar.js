@@ -1,18 +1,22 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-import {GiHamburgerMenu} from 'react-icons/gi'
-import Popup from 'reactjs-popup'
-import logo from '../../Asset/logo.png'
+import React from "react";
+import { NavLink } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
+import Popup from "reactjs-popup";
+import logo from "../../Asset/logo.png";
 
-import './NavbarStyle.css'
+import "./NavbarStyle.css";
 
 function Navbar() {
   const [user, setUser] = useState(null);
 
+  const environment = {
+    baseUrl: "https://sub4.macstak.in",
+  };
+
   useEffect(() => {
     const getUser = () => {
-      fetch("http://localhost:5000/auth/login/success", {
+      fetch(`${environment.baseUrl}/auth/login/success`, {
         method: "GET",
         credentials: "include",
         headers: {
@@ -34,84 +38,95 @@ function Navbar() {
     };
     getUser();
   }, []);
-  console.log(user)
+  console.log(user);
 
-  const handleLogout=()=>{
-    window.open("http://localhost:5000/auth/logout", "_self");
-  }
+  const handleLogout = () => {
+    window.open(`${environment.baseUrl}/auth/logout`, "_self");
+  };
 
-  const MobileMenu=()=>{
-    return(
+  const MobileMenu = () => {
+    return (
       <Popup
-          trigger={
-            <button type="button" className="hamburger-btn">
-              <GiHamburgerMenu size={24} className="hamburger-menu" />
-            </button>
-          }
-          position="bottom"
-        >
-          {close => (
-            <div className="modal-container">
-              <NavLink to="/" className="list-item">
-                <p className="items">Built a Contract</p>
+        trigger={
+          <button type="button" className="hamburger-btn">
+            <GiHamburgerMenu size={24} className="hamburger-menu" />
+          </button>
+        }
+        position="bottom"
+      >
+        {(close) => (
+          <div className="modal-container">
+            <NavLink to="/" className="list-item">
+              <p className="items">Built a Contract</p>
+            </NavLink>
+            {user ? (
+              <p onClick={handleLogout} className="items">
+                LogOut
+              </p>
+            ) : (
+              <NavLink to={"/login"} className="list-item">
+                <p className="items">Sign In</p>
               </NavLink>
-              {user ? (
-          <p onClick={handleLogout} className='items'>LogOut</p>
+            )}
+          </div>
+        )}
+      </Popup>
+    );
+  };
 
-          ):
-            <NavLink to={'/login'} className="list-item"><p className='items'>Sign In</p></NavLink>
-
-            }
-            </div>
-          )}
-        </Popup>
-    )
-  }
-
-  const DesktopView=()=>{
-    return(
-      <ul className='list-menu-desktop'>
-            <li className='list-item'>
-            <NavLink to={'/'} activeClassName='active-option'>Build a Contract</NavLink>
+  const DesktopView = () => {
+    return (
+      <ul className="list-menu-desktop">
+        <li className="list-item">
+          <NavLink to={"/"} activeClassName="active-option">
+            Build a Contract
+          </NavLink>
+        </li>
+        <li className="list-item">
+          <NavLink to={"/dashboard"}>Dashboard</NavLink>
+        </li>
+        {user ? (
+          <>
+            <li className="listItem">
+              <img
+                src={user.photos[0].value}
+                alt={user.displayName}
+                className="avatar"
+              />
             </li>
-            <li className='list-item'>
-            <NavLink to={'/dashboard'}>Dashboard</NavLink>
+            <li onClick={handleLogout} className="logout-btn">
+              LogOut
             </li>
-            {user ? (<>
-              <li className="listItem">
-            <img
-              src={user.photos[0].value}
-              alt={user.displayName}
-              className="avatar"
-            />
+          </>
+        ) : (
+          <li className="list-item">
+            <NavLink to={"/login"} activeClassName="active-option">
+              Sign In
+            </NavLink>
           </li>
-          <li onClick={handleLogout} className='logout-btn'>LogOut</li>
-            </>
-          ):
-            <li className='list-item'>
-            <NavLink to={'/login'} activeClassName='active-option'>Sign In</NavLink>
-           
-          </li>
-            }
-            
-        </ul>
-    )
-  }
+        )}
+      </ul>
+    );
+  };
 
   return (
-    <div className='navbar'>
-      <NavLink to={'/'}><img src= {logo} alt='logo' className='logo'/></NavLink>
-        <DesktopView/>
-        <div className='mobile-view'>
-        {user ? (<img
-              src={user.photos[0].value}
-              alt={user.displayName}
-              className="avatar-mobile"
-            />): null}
-        <MobileMenu/>
-        </div>
+    <div className="navbar">
+      <NavLink to={"/"}>
+        <img src={logo} alt="logo" className="logo" />
+      </NavLink>
+      <DesktopView />
+      <div className="mobile-view">
+        {user ? (
+          <img
+            src={user.photos[0].value}
+            alt={user.displayName}
+            className="avatar-mobile"
+          />
+        ) : null}
+        <MobileMenu />
+      </div>
     </div>
-  )
+  );
 }
 
-export default Navbar
+export default Navbar;
